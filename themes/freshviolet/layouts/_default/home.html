@@ -1,0 +1,18 @@
+{{ define "main" }}
+
+{{ partial "breadcrumb.html" . }}
+
+<div class="commit">
+  <img src="https://ghchart.rshah.org/49344b/{{ .Site.Params.githubUsername }}"/>
+</div>
+
+<div class="posts-list">
+  {{ range first 10 .Site.RegularPages }}
+    <div class="post-title">
+      <a href="{{ .RelPermalink }}">- {{ .LinkTitle }}</a>
+      <small>{{ .Date | time.Format "2006.01.02" }}</small>
+    </div>
+  {{ end }}
+</div>
+
+{{ end }}

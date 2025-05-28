@@ -1,0 +1,39 @@
+baseURL = 'https://Pengw0in.github.io/lohithsrikar'
+title = 'JustaBlogSite!'
+languageCode = 'en-us'
+canonifyURLs = true
+theme = 'freshviolet'
+
+[[menus.main]]
+name = 'Home'
+pageRef = '/'
+weight = 10
+
+[[menus.main]]
+name = 'TAGS'
+pageRef = '/tags/'
+weight = 20
+
+[[menus.main]]
+name = 'ABOUT'
+pageRef = '/about/'
+weight = 30
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.116.0"
+
+[params]
+  googleAnalytics = 'G-000000000' # your GoogleAnalytics code
+  githubUsername = 'Pengw0in' # your githubUsername
+  copyright = 'Copyright © 2025 Lohith Srikar'
+  math = true
+
+[taxonomies]
+  tag = 'tags'
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

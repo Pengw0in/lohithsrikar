@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/lohithsrikar/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=lohithsrikar/livereload" data-no-instant defer></script>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '$', right: '$', display: false}
+            ]
+        });"></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Quartet | JustaBlogSite!</title>
+
+    <link rel="stylesheet" href="http://localhost:1313/lohithsrikar/css/main.css">
+    <link rel="stylesheet" href="http://localhost:1313/lohithsrikar/css/min600.css">
+
+
+      <script src="http://localhost:1313/lohithsrikar/js/main.js"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap" rel="stylesheet">
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-000000000"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('hugo', 'G-000000000');
+</script>
+
+
+</head>
+<body>
+    <header class="main-header">
+	<nav>
+	  <li><a href="http://localhost:1313/lohithsrikar/">/home</a></li>
+	  <li><a href="http://localhost:1313/lohithsrikar/tags/">/tags</a></li>
+	  <li><a href="http://localhost:1313/lohithsrikar/about/">/about</a></li>
+	  <li id="theme-toggle" style="cursor: pointer;">/todark</li>
+	</nav>
+  </header>
+
+  <script>
+	document.addEventListener('DOMContentLoaded', function() {
+	  const themeToggle = document.getElementById('theme-toggle');
+	  
+	  
+	  let currentTheme = localStorage.getItem('theme') || 'light';
+  
+	  
+	  document.body.setAttribute('data-theme', currentTheme);
+	  themeToggle.textContent = currentTheme === 'dark' ? '/tolight' : '/todark';
+  
+	  
+	  function toggleTheme() {
+		
+		const newTheme = document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  
+		
+		document.body.setAttribute('data-theme', newTheme);
+  
+		
+		localStorage.setItem('theme', newTheme);
+  
+		
+		themeToggle.textContent = newTheme === 'dark' ? '/tolight' : '/todark';
+	  }
+  
+	  
+	  themeToggle.addEventListener('click', toggleTheme);
+	});
+  </script>
+
+    
+  <aside class="toc">
+    <nav id="TableOfContents"></nav>
+  </aside>
+  <div class="featured-container">
+    
+    <div class="overlay-text">
+      <small>2025.05.28</small>
+      <div class="singleTitle">Quartet</div>
+    </div>
+  </div>
+  <h1 id="quartet">Quartet</h1>
+<p>Hewo people!</p>
+<p>So in this writeUp, lets see how we can solve this Quartet CTF from NahamCon2025.</p>
+<img src="http://localhost:1313/lohithsrikar/images/quartet/1.png" alt="1.png" width="600">
+<p>so we are given Four files with strange extension ? Well they maybe strange for a person who saw them for first time, but they are not!</p>
+<p>These files with “zX”(where X is some number) extension are parts of a single zip file( .zip). so basically combining these zip files will give a one single complete zip file in theory.</p>
+<p>Lets try to combine them with the following prompt</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> cat * &gt; main.zip <span style="color:#75715e"># make sure that all these files are in an isolated folder!</span>
+</span></span></code></pre></div><p>now lets unzip this main.zip file!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>unzip main.zip
+</span></span></code></pre></div><p>and Alas!, we are greeted with a error , which is just a warning🤷‍♂️</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Archive:  main.zip
+</span></span><span style="display:flex;"><span>warning <span style="color:#f92672">[</span>main.zip<span style="color:#f92672">]</span>:  zipfile claims to be last disk of a multi-part archive;
+</span></span><span style="display:flex;"><span>  attempting to process anyway, assuming all parts have been concatenated
+</span></span><span style="display:flex;"><span>  together in order.  Expect <span style="color:#e6db74">&#34;errors&#34;</span> and warnings...true multi-part support
+</span></span><span style="display:flex;"><span>  doesn<span style="color:#960050;background-color:#1e0010">&#39;</span>t exist yet <span style="color:#f92672">(</span>coming soon<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>warning <span style="color:#f92672">[</span>main.zip<span style="color:#f92672">]</span>:  <span style="color:#ae81ff">1526784</span> extra bytes at beginning or within zipfile
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">(</span>attempting to process anyway<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>file <span style="color:#75715e">#1:  bad zipfile offset (local header sig):  1526788</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">(</span>attempting to re-compensate<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  inflating: quartet.jpeg
+</span></span></code></pre></div><p>mehh , just ignore them. We can see that  <em>inflating: quartet.jpeg i</em>n the last, that mean a jpeg file is extracted from main.zip. Lets look at it.</p>
+<img src="http://localhost:1313/lohithsrikar/images/quartet/quartet.jpeg" alt="quartet.jpeg" width="600">
+<p>Woah a quartet! no wonder the ctf name is also the same. well it is a image lets search for strings and filter them out with following command</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>strings quartet.jpeg | grep <span style="color:#e6db74">&#34;flag&#34;</span>
+</span></span></code></pre></div><p>and there you go , the flag will appear!.</p>
+
+
+    
+
+<script src="https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 40,
+  backgroundColor: '#49344b',
+  textColor: '#fff'
+})</script>
+
+</body>
+</html>

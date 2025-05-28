@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/lohithsrikar/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=lohithsrikar/livereload" data-no-instant defer></script>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '$', right: '$', display: false}
+            ]
+        });"></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>ScreenShot! | JustaBlogSite!</title>
+
+    <link rel="stylesheet" href="http://localhost:1313/lohithsrikar/css/main.css">
+    <link rel="stylesheet" href="http://localhost:1313/lohithsrikar/css/min600.css">
+
+
+      <script src="http://localhost:1313/lohithsrikar/js/main.js"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap" rel="stylesheet">
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-000000000"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('hugo', 'G-000000000');
+</script>
+
+
+</head>
+<body>
+    <header class="main-header">
+	<nav>
+	  <li><a href="http://localhost:1313/lohithsrikar/">/home</a></li>
+	  <li><a href="http://localhost:1313/lohithsrikar/tags/">/tags</a></li>
+	  <li><a href="http://localhost:1313/lohithsrikar/about/">/about</a></li>
+	  <li id="theme-toggle" style="cursor: pointer;">/todark</li>
+	</nav>
+  </header>
+
+  <script>
+	document.addEventListener('DOMContentLoaded', function() {
+	  const themeToggle = document.getElementById('theme-toggle');
+	  
+	  
+	  let currentTheme = localStorage.getItem('theme') || 'light';
+  
+	  
+	  document.body.setAttribute('data-theme', currentTheme);
+	  themeToggle.textContent = currentTheme === 'dark' ? '/tolight' : '/todark';
+  
+	  
+	  function toggleTheme() {
+		
+		const newTheme = document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  
+		
+		document.body.setAttribute('data-theme', newTheme);
+  
+		
+		localStorage.setItem('theme', newTheme);
+  
+		
+		themeToggle.textContent = newTheme === 'dark' ? '/tolight' : '/todark';
+	  }
+  
+	  
+	  themeToggle.addEventListener('click', toggleTheme);
+	});
+  </script>
+
+    
+  <aside class="toc">
+    <nav id="TableOfContents"></nav>
+  </aside>
+  <div class="featured-container">
+    
+    <div class="overlay-text">
+      <small>2025.05.28</small>
+      <div class="singleTitle">ScreenShot!</div>
+    </div>
+  </div>
+  <h1 id="screenshot">ScreenShot!</h1>
+<p>helo people!
+Lets wrap this up quick!</p>
+<p>This is a ctf from NahamCon2025 where we are given a image</p>
+<img src="http://localhost:1313/lohithsrikar/images/screenshot/1.png" alt="1.png" width="600">
+<p>Well the image contains hex dump of some zip file.</p>
+<img src="http://localhost:1313/lohithsrikar/images/screenshot/2.png" alt="1.png" width="600">
+<p>well how did I say its a zip file? well obviously its mention in the ctf description right?</p>
+<p>thats true, but the other way is the match file signature , each file extension has its own file extension at starting of file, for example in this case we have <strong>504b</strong>, which is a file signature for zip files! More info about them here: <a href="https://en.wikipedia.org/wiki/List_of_file_signatures">https://en.wikipedia.org/wiki/List_of_file_signatures</a></p>
+<p>so what we will do is reverse this hex dump to convert back it into a zip file and open that zip hoping that we would find a flag file in it!</p>
+<p>first lets copy the contents of this image to a txt file , say hdump.txt</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HexDump" data-lang="HexDump"><span style="display:flex;"><span>00000000: <span style="color:#ae81ff">504b</span> <span style="color:#ae81ff">0304</span> <span style="color:#ae81ff">3300</span> <span style="color:#ae81ff">0100</span> <span style="color:#ae81ff">6300</span> <span style="color:#ae81ff">2f02</span> <span style="color:#ae81ff">b55a</span> <span style="color:#ae81ff">0000</span>  <span style="color:#e6db74">PK..3...c./..Z..</span>
+</span></span><span style="display:flex;"><span>00000010: <span style="color:#ae81ff">0000</span> <span style="color:#ae81ff">4300</span> <span style="color:#ae81ff">0000</span> <span style="color:#ae81ff">2700</span> <span style="color:#ae81ff">0000</span> <span style="color:#ae81ff">0800</span> <span style="color:#ae81ff">0b00</span> <span style="color:#ae81ff">666c</span>  <span style="color:#e6db74">..C...&#39;......fl</span>
+</span></span><span style="display:flex;"><span>00000020: <span style="color:#ae81ff">6167</span> <span style="color:#ae81ff">2e74</span> <span style="color:#ae81ff">7874</span> <span style="color:#ae81ff">0199</span> <span style="color:#ae81ff">0700</span> <span style="color:#ae81ff">0200</span> <span style="color:#ae81ff">4145</span> <span style="color:#ae81ff">0300</span>  <span style="color:#e6db74">ag.txt......AE..</span>
+</span></span><span style="display:flex;"><span>00000030: <span style="color:#ae81ff">003d</span> <span style="color:#ae81ff">42ff</span> <span style="color:#ae81ff">d1b3</span> <span style="color:#ae81ff">5f95</span> <span style="color:#ae81ff">0314</span> <span style="color:#ae81ff">24f6</span> <span style="color:#ae81ff">8b65</span> <span style="color:#ae81ff">c3f5</span>  <span style="color:#e6db74">.=B..._...$..e..</span>
+</span></span><span style="display:flex;"><span>00000040: <span style="color:#ae81ff">7669</span> <span style="color:#ae81ff">f14e</span> <span style="color:#ae81ff">8df0</span> <span style="color:#ae81ff">003f</span> <span style="color:#ae81ff">e240</span> <span style="color:#ae81ff">b3ac</span> <span style="color:#ae81ff">3364</span> <span style="color:#ae81ff">859e</span>  <span style="color:#e6db74">vi.N...?.@..3d..</span>
+</span></span><span style="display:flex;"><span>00000050: <span style="color:#ae81ff">4c2d</span> <span style="color:#ae81ff">bc3c</span> <span style="color:#ae81ff">36f2</span> <span style="color:#ae81ff">d4ac</span> <span style="color:#ae81ff">c403</span> <span style="color:#ae81ff">7613</span> <span style="color:#ae81ff">85af</span> <span style="color:#ae81ff">e4e3</span>  <span style="color:#e6db74">L-.&lt;6.....v.....</span>
+</span></span><span style="display:flex;"><span>00000060: <span style="color:#ae81ff">f90f</span> <span style="color:#ae81ff">bd29</span> <span style="color:#ae81ff">d91b</span> <span style="color:#ae81ff">614b</span> <span style="color:#ae81ff">a2c6</span> <span style="color:#ae81ff">efde</span> <span style="color:#ae81ff">11b7</span> <span style="color:#ae81ff">1bcc</span>  <span style="color:#e6db74">...)..aK........</span>
+</span></span><span style="display:flex;"><span>00000070: <span style="color:#ae81ff">907a</span> <span style="color:#ae81ff">72ed</span> <span style="color:#ae81ff">504b</span> <span style="color:#ae81ff">0102</span> <span style="color:#ae81ff">3f03</span> <span style="color:#ae81ff">3300</span> <span style="color:#ae81ff">0100</span> <span style="color:#ae81ff">6300</span>  <span style="color:#e6db74">.zr.PK..?.3...c.</span>
+</span></span><span style="display:flex;"><span>00000080: <span style="color:#ae81ff">2f02</span> <span style="color:#ae81ff">b55a</span> <span style="color:#ae81ff">0000</span> <span style="color:#ae81ff">0000</span> <span style="color:#ae81ff">4300</span> <span style="color:#ae81ff">0000</span> <span style="color:#ae81ff">2700</span> <span style="color:#ae81ff">0000</span>  <span style="color:#e6db74">/..Z....C...&#39;...</span>
+</span></span><span style="display:flex;"><span>00000090: <span style="color:#ae81ff">0800</span> <span style="color:#ae81ff">2f00</span> <span style="color:#ae81ff">0000</span> <span style="color:#ae81ff">0000</span> <span style="color:#ae81ff">0000</span> <span style="color:#ae81ff">2080</span> <span style="color:#ae81ff">b481</span> <span style="color:#ae81ff">0000</span>  <span style="color:#e6db74">../....... .....</span>
+</span></span><span style="display:flex;"><span>000000a0: <span style="color:#ae81ff">0000</span> <span style="color:#ae81ff">666c</span> <span style="color:#ae81ff">6167</span> <span style="color:#ae81ff">2e74</span> <span style="color:#ae81ff">7874</span> <span style="color:#ae81ff">0a00</span> <span style="color:#ae81ff">2000</span> <span style="color:#ae81ff">0000</span>  <span style="color:#e6db74">..flag.txt.. ...</span>
+</span></span><span style="display:flex;"><span>000000b0: <span style="color:#ae81ff">0000</span> <span style="color:#ae81ff">0100</span> <span style="color:#ae81ff">1800</span> <span style="color:#ae81ff">8213</span> <span style="color:#ae81ff">8543</span> <span style="color:#ae81ff">07ca</span> <span style="color:#ae81ff">db01</span> <span style="color:#ae81ff">0000</span>  <span style="color:#e6db74">.........C......</span>
+</span></span><span style="display:flex;"><span>000000c0: <span style="color:#ae81ff">0000</span> <span style="color:#ae81ff">0000</span> <span style="color:#ae81ff">0000</span> <span style="color:#ae81ff">0000</span> <span style="color:#ae81ff">0000</span> <span style="color:#ae81ff">0000</span> <span style="color:#ae81ff">0000</span> <span style="color:#ae81ff">0199</span>  <span style="color:#e6db74">................</span>
+</span></span><span style="display:flex;"><span>000000d0: <span style="color:#ae81ff">0700</span> <span style="color:#ae81ff">0200</span> <span style="color:#ae81ff">4145</span> <span style="color:#ae81ff">0300</span> <span style="color:#ae81ff">0050</span> <span style="color:#ae81ff">4b05</span> <span style="color:#ae81ff">0600</span> <span style="color:#ae81ff">0000</span>  <span style="color:#e6db74">....AE...PK.....</span>
+</span></span><span style="display:flex;"><span>000000e0: <span style="color:#ae81ff">0001</span> <span style="color:#ae81ff">0001</span> <span style="color:#ae81ff">0065</span> <span style="color:#ae81ff">0000</span> <span style="color:#ae81ff">0074</span> <span style="color:#ae81ff">0000</span> <span style="color:#ae81ff">0000</span> <span style="color:#ae81ff">00</span>   <span style="color:#e6db74"> .....e...t.....</span>
+</span></span></code></pre></div><p>to reverse the hexdump and convert it into a zip file , the following command can be used</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Bash" data-lang="Bash"><span style="display:flex;"><span>Xxd -r hdump.txt &gt; hdump.zip 
+</span></span></code></pre></div><p>and then unzip the dump.zip</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Bash" data-lang="Bash"><span style="display:flex;"><span>unzip hdump.zip
+</span></span></code></pre></div><p>and thats it, we will get a flag file!</p>
+
+
+    
+
+<script src="https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 40,
+  backgroundColor: '#49344b',
+  textColor: '#fff'
+})</script>
+
+</body>
+</html>

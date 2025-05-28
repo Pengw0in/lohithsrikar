@@ -1,0 +1,7 @@
+name = 'FreshViolet'
+license = 'Private'
+description = 'minimal hugo blog based on freshpink'
+
+# If the theme has a single author
+[author]
+  name = 'Pengw0in'
