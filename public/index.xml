@@ -6,28 +6,35 @@
     <description>Recent content on JustaBlogSite!</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 28 May 2025 20:23:58 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 29 May 2025 20:23:58 +0530</lastBuildDate>
     <atom:link href="http://localhost:1313/lohithsrikar/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Free Flags!</title>
-      <link>http://localhost:1313/lohithsrikar/posts/freeflags/</link>
-      <pubDate>Wed, 28 May 2025 20:23:58 +0530</pubDate>
-      <guid>http://localhost:1313/lohithsrikar/posts/freeflags/</guid>
-      <description>&lt;h1 id=&#34;free-flags&#34;&gt;Free Flags!&lt;/h1&gt;&#xA;&lt;p&gt;Hola people!&lt;/p&gt;&#xA;&lt;img src=&#34;http://localhost:1313/lohithsrikar/images/freeflags/1.png&#34; alt=&#34;1.png&#34; width=&#34;600&#34;&gt;&#xA;&lt;p&gt;This is our first challenge in Nahamcon2025 CTF. In this challenge, we are give a &lt;em&gt;free_flags.txt,&lt;/em&gt; which apparently contains a lot of flags! So how do we find the correct flag out of em?&lt;/p&gt;&#xA;&lt;p&gt;Brute force maybe? maaaybee?&lt;/p&gt;&#xA;&lt;p&gt;well its a possible, but not feasible!&lt;/p&gt;&#xA;&lt;img src=&#34;http://localhost:1313/lohithsrikar/images/freeflags/2.png&#34; alt=&#34;1.png&#34; width=&#34;600&#34;&gt;&#xA;&lt;p&gt;so so how? only if we have a criteria to filter out correct flag ….. only if… wait! if you have read the rules properly I think you can find something like&lt;/p&gt;</description>
+      <title>[OWASP] Broken Object Level Authorization</title>
+      <link>http://localhost:1313/lohithsrikar/posts/owasp-api/bola/</link>
+      <pubDate>Thu, 29 May 2025 20:23:58 +0530</pubDate>
+      <guid>http://localhost:1313/lohithsrikar/posts/owasp-api/bola/</guid>
+      <description>&lt;div class=&#34;series&#34;&gt;&#xA;  &lt;details&gt;&#xA;    &lt;summary&gt;OWASP API Security Top 10&lt;/summary&gt;&#xA;    &lt;ul&gt;&#xA;      &#xA;      &#xA;      &#xA;      &lt;li&gt;-&lt;a href=&#34;http://localhost:1313/lohithsrikar/posts/bolg/&#34;&gt;1. Broken Object Level Authorization&lt;/a&gt;&lt;/li&gt;&#xA;      &#xA;    &lt;/ul&gt;&#xA;  &lt;/details&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;h2 id=&#34;1-introduction&#34;&gt;1. Introduction&lt;/h2&gt;&#xA;&lt;p&gt;In the present world, Application Programming Interface (API) stands out to be one of the most critical aspects. APIs are responsible for our daily activities like checking weather on our smart phone, buying a product from an E-commerce store or accessing our data on cloud storage and many more. However such technology also comes with its own risks. One of which is Broken object level authorization(BOLA).&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Quartet</title>
-      <link>http://localhost:1313/lohithsrikar/posts/quartet/</link>
-      <pubDate>Wed, 28 May 2025 20:23:58 +0530</pubDate>
-      <guid>http://localhost:1313/lohithsrikar/posts/quartet/</guid>
-      <description>&lt;h1 id=&#34;quartet&#34;&gt;Quartet&lt;/h1&gt;&#xA;&lt;p&gt;Hewo people!&lt;/p&gt;&#xA;&lt;p&gt;So in this writeUp, lets see how we can solve this Quartet CTF from NahamCon2025.&lt;/p&gt;&#xA;&lt;img src=&#34;http://localhost:1313/lohithsrikar/images/quartet/1.png&#34; alt=&#34;1.png&#34; width=&#34;600&#34;&gt;&#xA;&lt;p&gt;so we are given Four files with strange extension ? Well they maybe strange for a person who saw them for first time, but they are not!&lt;/p&gt;&#xA;&lt;p&gt;These files with “zX”(where X is some number) extension are parts of a single zip file( .zip). so basically combining these zip files will give a one single complete zip file in theory.&lt;/p&gt;</description>
+      <title>[Nahamcon25] Free Flags!</title>
+      <link>http://localhost:1313/lohithsrikar/posts/nahamcon25/freeflags/</link>
+      <pubDate>Fri, 23 May 2025 20:23:58 +0530</pubDate>
+      <guid>http://localhost:1313/lohithsrikar/posts/nahamcon25/freeflags/</guid>
+      <description>&lt;div class=&#34;series&#34;&gt;&#xA;  &lt;details&gt;&#xA;    &lt;summary&gt;NahamCon 2025 CTF Series&lt;/summary&gt;&#xA;    &lt;ul&gt;&#xA;      &#xA;      &#xA;      &#xA;      &lt;li&gt;-&lt;a href=&#34;http://localhost:1313/lohithsrikar/posts/freeflags/&#34;&gt;1. Free Flags!&lt;/a&gt;&lt;/li&gt;&#xA;      &#xA;      &lt;li&gt;-&lt;a href=&#34;http://localhost:1313/lohithsrikar/posts/quartet/&#34;&gt;2. Quartet&lt;/a&gt;&lt;/li&gt;&#xA;      &#xA;      &lt;li&gt;-&lt;a href=&#34;http://localhost:1313/lohithsrikar/posts/screenshot/&#34;&gt;3. ScreenShot!&lt;/a&gt;&lt;/li&gt;&#xA;      &#xA;    &lt;/ul&gt;&#xA;  &lt;/details&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;h1 id=&#34;free-flags&#34;&gt;Free Flags!&lt;/h1&gt;&#xA;&lt;p&gt;Hello everyone!&lt;/p&gt;&#xA;&lt;img src=&#34;http://localhost:1313/lohithsrikar/images/freeflags/1.png&#34; alt=&#34;Challenge Screenshot&#34; width=&#34;600&#34;&gt;&#xA;&lt;p&gt;This is our first challenge in NahamCon 2025 CTF. In this challenge, we are given a &lt;em&gt;free_flags.txt&lt;/em&gt; file, which apparently contains a lot of flags! So how do we find the correct flag among them?&lt;/p&gt;&#xA;&lt;p&gt;Brute force maybe? Perhaps?&lt;/p&gt;&#xA;&lt;p&gt;Well, it&amp;rsquo;s possible, but not feasible!&lt;/p&gt;&#xA;&lt;img src=&#34;http://localhost:1313/lohithsrikar/images/freeflags/2.png&#34; alt=&#34;File Contents&#34; width=&#34;600&#34;&gt;&#xA;&lt;p&gt;So how do we solve this? If only we had criteria to filter out the correct flag&amp;hellip; if only we had&amp;hellip; wait! If you have read the rules properly, you&amp;rsquo;ll find something like this:&lt;/p&gt;</description>
     </item>
     <item>
-      <title>ScreenShot!</title>
-      <link>http://localhost:1313/lohithsrikar/posts/screenshot/</link>
-      <pubDate>Wed, 28 May 2025 20:23:58 +0530</pubDate>
-      <guid>http://localhost:1313/lohithsrikar/posts/screenshot/</guid>
-      <description>&lt;h1 id=&#34;screenshot&#34;&gt;ScreenShot!&lt;/h1&gt;&#xA;&lt;p&gt;helo people!&#xA;Lets wrap this up quick!&lt;/p&gt;&#xA;&lt;p&gt;This is a ctf from NahamCon2025 where we are given a image&lt;/p&gt;&#xA;&lt;img src=&#34;http://localhost:1313/lohithsrikar/images/screenshot/1.png&#34; alt=&#34;1.png&#34; width=&#34;600&#34;&gt;&#xA;&lt;p&gt;Well the image contains hex dump of some zip file.&lt;/p&gt;&#xA;&lt;img src=&#34;http://localhost:1313/lohithsrikar/images/screenshot/2.png&#34; alt=&#34;1.png&#34; width=&#34;600&#34;&gt;&#xA;&lt;p&gt;well how did I say its a zip file? well obviously its mention in the ctf description right?&lt;/p&gt;&#xA;&lt;p&gt;thats true, but the other way is the match file signature , each file extension has its own file extension at starting of file, for example in this case we have &lt;strong&gt;504b&lt;/strong&gt;, which is a file signature for zip files! More info about them here: &lt;a href=&#34;https://en.wikipedia.org/wiki/List_of_file_signatures&#34;&gt;https://en.wikipedia.org/wiki/List_of_file_signatures&lt;/a&gt;&lt;/p&gt;</description>
+      <title>[Nahamcon25] Quartet</title>
+      <link>http://localhost:1313/lohithsrikar/posts/nahamcon25/quartet/</link>
+      <pubDate>Fri, 23 May 2025 20:23:58 +0530</pubDate>
+      <guid>http://localhost:1313/lohithsrikar/posts/nahamcon25/quartet/</guid>
+      <description>&lt;div class=&#34;series&#34;&gt;&#xA;  &lt;details&gt;&#xA;    &lt;summary&gt;NahamCon 2025 CTF Series&lt;/summary&gt;&#xA;    &lt;ul&gt;&#xA;      &#xA;      &#xA;      &#xA;    &lt;/ul&gt;&#xA;  &lt;/details&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;h1 id=&#34;quartet&#34;&gt;Quartet&lt;/h1&gt;&#xA;&lt;p&gt;Hello everyone!&lt;/p&gt;&#xA;&lt;p&gt;In this writeup, let&amp;rsquo;s see how we can solve the Quartet CTF challenge from NahamCon 2025.&lt;/p&gt;&#xA;&lt;img src=&#34;http://localhost:1313/lohithsrikar/images/quartet/1.png&#34; alt=&#34;Challenge Screenshot&#34; width=&#34;600&#34;&gt;&#xA;&lt;p&gt;We are given four files with strange extensions. Well, they may seem strange for someone who&amp;rsquo;s seeing them for the first time, but they&amp;rsquo;re not!&lt;/p&gt;&#xA;&lt;p&gt;These files with &amp;ldquo;zX&amp;rdquo; (where X is a number) extensions are parts of a single zip file (.zip). Basically, combining these zip files will give us one single complete zip file in theory.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[Nahamcon25] ScreenShot!</title>
+      <link>http://localhost:1313/lohithsrikar/posts/nahamcon25/screenshot/</link>
+      <pubDate>Fri, 23 May 2025 20:23:58 +0530</pubDate>
+      <guid>http://localhost:1313/lohithsrikar/posts/nahamcon25/screenshot/</guid>
+      <description>&lt;div class=&#34;series&#34;&gt;&#xA;  &lt;details&gt;&#xA;    &lt;summary&gt;NahamCon 2025 CTF Series&lt;/summary&gt;&#xA;    &lt;ul&gt;&#xA;      &#xA;      &#xA;      &#xA;    &lt;/ul&gt;&#xA;  &lt;/details&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;h1 id=&#34;screenshot&#34;&gt;ScreenShot!&lt;/h1&gt;&#xA;&lt;p&gt;Hello everyone!&#xA;Let&amp;rsquo;s wrap this up quickly!&lt;/p&gt;&#xA;&lt;p&gt;This is a CTF challenge from NahamCon 2025 where we are given an image.&lt;/p&gt;&#xA;&lt;img src=&#34;http://localhost:1313/lohithsrikar/images/screenshot/1.png&#34; alt=&#34;Challenge Screenshot&#34; width=&#34;600&#34;&gt;&#xA;&lt;p&gt;Well, the image contains a hex dump of some zip file.&lt;/p&gt;&#xA;&lt;img src=&#34;http://localhost:1313/lohithsrikar/images/screenshot/2.png&#34; alt=&#34;Hex Dump Screenshot&#34; width=&#34;600&#34;&gt;&#xA;&lt;p&gt;Well, how did I know it&amp;rsquo;s a zip file? Well, obviously it&amp;rsquo;s mentioned in the CTF description, right?&lt;/p&gt;&#xA;&lt;p&gt;That&amp;rsquo;s true, but another way is to match the file signature. Each file extension has its own file signature at the beginning of the file. For example, in this case we have &lt;code&gt;504b&lt;/code&gt;, which is the file signature for zip files! More info about them here: &lt;a href=&#34;https://en.wikipedia.org/wiki/List_of_file_signatures&#34;&gt;https://en.wikipedia.org/wiki/List_of_file_signatures&lt;/a&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

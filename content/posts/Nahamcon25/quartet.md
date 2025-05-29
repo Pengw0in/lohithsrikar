@@ -1,8 +1,13 @@
 +++
-date = '2025-05-28T20:23:58+05:30'
+date = '2025-05-23T20:23:58+05:30'
 draft = false
-title = 'Quartet'
+title = '[Nahamcon25] Quartet'
+series = 'nahamcon25'
+featured_image = "/images/freeflags/featured.png"
+tags = ['writeups']
 +++
+
+{{< series title="NahamCon 2025 CTF Series" series="nahamcon25" >}}
 
 # Quartet
 

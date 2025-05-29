@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/lohithsrikar/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=lohithsrikar/livereload" data-no-instant defer></script>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '$', right: '$', display: false}
+            ]
+        });"></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>[OWASP] Broken Object Level Authorization | JustaBlogSite!</title>
+<link rel="icon" type="image/x-icon" href="http://localhost:1313/lohithsrikar/favicon.ico">
+
+    <link rel="stylesheet" href="http://localhost:1313/lohithsrikar/css/main.css">
+    <link rel="stylesheet" href="http://localhost:1313/lohithsrikar/css/min600.css">
+
+
+      <script src="http://localhost:1313/lohithsrikar/js/main.js"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap" rel="stylesheet">
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4QR5T88G3K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('hugo', 'G-4QR5T88G3K');
+</script>
+
+
+</head>
+<body>
+    <header class="main-header">
+	<nav>
+	  <li><a href="http://localhost:1313/lohithsrikar/">/home</a></li>
+	  <li><a href="http://localhost:1313/lohithsrikar/tags/">/tags</a></li>
+	  <li><a href="http://localhost:1313/lohithsrikar/about/">/about</a></li>
+	  <li id="theme-toggle" style="cursor: pointer;">/todark</li>
+	</nav>
+  </header>
+
+  <script>
+	document.addEventListener('DOMContentLoaded', function() {
+	  const themeToggle = document.getElementById('theme-toggle');
+	  
+	  
+	  let currentTheme = localStorage.getItem('theme') || 'light';
+  
+	  
+	  document.body.setAttribute('data-theme', currentTheme);
+	  themeToggle.textContent = currentTheme === 'dark' ? '/tolight' : '/todark';
+  
+	  
+	  function toggleTheme() {
+		
+		const newTheme = document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  
+		
+		document.body.setAttribute('data-theme', newTheme);
+  
+		
+		localStorage.setItem('theme', newTheme);
+  
+		
+		themeToggle.textContent = newTheme === 'dark' ? '/tolight' : '/todark';
+	  }
+  
+	  
+	  themeToggle.addEventListener('click', toggleTheme);
+	});
+  </script>
+
+    
+  <aside class="toc">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-introduction">1. Introduction</a>
+      <ul>
+        <li><a href="#1-1-authentication-vs-authorization">1-1. Authentication VS Authorization</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-bola-workings">2. BOLA Workings</a>
+      <ul>
+        <li><a href="#2-1-attack-scenarios">2-1 Attack Scenarios</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-real-world-bola-breaches">3. Real-World BOLA Breaches</a></li>
+    <li><a href="#4--how-to-prevent">4.  How to prevent</a></li>
+    <li><a href="#5-references">5. References</a></li>
+  </ul>
+</nav>
+  </aside>
+  <div class="featured-container">
+    
+      <div class="featured-image">
+        <img src="http://localhost:1313/lohithsrikar/images/bola/featured.jpeg" alt="Featured Image for [OWASP] Broken Object Level Authorization">
+      </div>
+    
+    <div class="overlay-text">
+      <small>2025.05.29</small>
+      <div class="singleTitle">[OWASP] Broken Object Level Authorization</div>
+    </div>
+  </div>
+  <div class="series">
+  <details>
+    <summary>OWASP API Security Top 10</summary>
+    <ul>
+      
+      
+      
+      <li>-<a href="http://localhost:1313/lohithsrikar/posts/bolg/">1. Broken Object Level Authorization</a></li>
+      
+    </ul>
+  </details>
+</div>
+
+<h2 id="1-introduction">1. Introduction</h2>
+<p>In the present world, Application Programming Interface (API) stands out to be one of the most critical aspects. APIs are responsible for our daily activities like checking weather on our smart phone, buying a product from an E-commerce store or accessing our data on cloud storage and many more. However such technology also comes with its own risks. One of which is Broken object level authorization(BOLA).</p>
+<p>This vulnerability is recognized as Top security threat in <a href="https://owasp.org/API-Security/editions/2023/en/0x11-t10/">OWASP API Security Top 10</a> , which has ability to compromise many systems if ignored. In this blog let us see how it works and how it can be mitigated</p>
+<h3 id="1-1-authentication-vs-authorization">1-1. Authentication VS Authorization</h3>
+<img src="http://localhost:1313/lohithsrikar/images/bola/2.jpeg" alt="example" width="600">
+Before moving to actual workings of BOLA, let's first point out a common misconception. Many people think Authentication is same as Authorization, but in reality both cover different concepts.
+<p>Authorization maybe defined as &ldquo;the process of verifying that a requested action or service is approved for a specific entity&rdquo; <a href="https://csrc.nist.gov/glossary/term/authorization">(NIST)</a>. Where as Authentication is a process of verifying an entity&rsquo;s identity. A user who is authenticated (perhaps by username and password) is not often authorized to access every resource and perform every action possible on the system. For example, a web app will contain both normal users and admins. Usually the actions performed by admins are not privileged to normal users even though they are authenticated, and also authentication is not always required to access data, like unauthenticated users can have access to public data, a login page, or a whole web page</p>
+<h2 id="2-bola-workings">2. BOLA Workings</h2>
+<img src="http://localhost:1313/lohithsrikar/images/bola/1.png" alt="example" width="600">
+BOLA is a specific type of [insecure direct object reference (IDOR)](https://pengw0in.github.io/lohithsrikar/) , occurs when an API fails to check whether a user is authorized  to access specific object like - JSON file, image file, a document or a resource, based on identifiers like `user_id` , `account_id`, sequential integers, UUIDs, or generic strings.
+<blockquote>
+<p><em>Just because a user is authenticated doesn&rsquo;t mean that the user authorized to access any object.</em></p></blockquote>
+<p>This vulnerability allows attackers to simply send API requests by altering object identifiers and gain access to sensitive data</p>
+<h3 id="2-1-attack-scenarios">2-1 Attack Scenarios</h3>
+<ul>
+<li>
+<p>Consider a University website which uses an API developed by university itself, which provides information about current students in that university. By inspecting browser requests , an attacker can identify a API end point like <code>example_uni/Photo_id/rollno</code> which returns student Photo based on identifier <code>rollno</code>. If attacker gains access to roll numbers of students, with a simple script, the attacker can access to photos of thousands of students.</p>
+</li>
+<li>
+<p>An automobile manufacturer has enabled remote control of its vehicles via a mobile API for communication with the driver&rsquo;s mobile phone. The API enables the driver to remotely start and stop the engine and lock and unlock the doors. As part of this flow, the user sends the Vehicle Identification Number (VIN) to the API. The API fails to validate that the VIN represents a vehicle that belongs to the logged in user, which leads to a BOLA vulnerability. An attacker can access vehicles that don&rsquo;t belong to him<a href="https://owasp.org/API-Security/editions/2023/en/0xa1-broken-object-level-authorization/#:~:text=An%20automobile%20manufacturer,belong%20to%20him.">source</a>.</p>
+</li>
+</ul>
+<h2 id="3-real-world-bola-breaches">3. Real-World BOLA Breaches</h2>
+<ul>
+<li><strong>Uber(2016):</strong> In October 2016, Uber experienced a data security incident that resulted in breach of information related to riders and driver accounts <a href="https://help.uber.com/en/riders/article/information-about-2016-data-security-incident?nodeId=12c1e9d1-4042-4231-a3ec-3605779b8815">source</a>.</li>
+<li><strong>Facebook (2018):</strong> A BOLA flaw allowed attackers to exploit access tokens, leading to the unauthorized access of millions of user accounts<a href="https://www.theguardian.com/news/2018/mar/17/cambridge-analytica-facebook-influence-us-election">source</a>.</li>
+<li><strong>Parler (2021):</strong> Researchers exploited BOLA vulnerabilities to download unprotected media files by incrementing object IDs, bypassing access controls without authentication<a href="https://www.wired.com/story/parler-hack-data-public-posts-images-video/">source</a></li>
+</ul>
+<p>These cases highlight how simple oversights in authorization mechanisms can lead to massive data breaches.</p>
+<h2 id="4--how-to-prevent">4.  How to prevent</h2>
+<ul>
+<li>Implement a proper authorization mechanism that relies on the user policies and hierarchy.</li>
+<li>Use the authorization mechanism to check if the logged-in user has access to perform the requested action on the record in every function that uses an input from the client to access a record in the database.</li>
+<li>Prefer the use of random and unpredictable values as GUIDs for records&rsquo; IDs.</li>
+<li>Write tests to evaluate the vulnerability of the authorization mechanism. Do not deploy changes that make the tests fail.</li>
+</ul>
+<h2 id="5-references">5. References</h2>
+<ul>
+<li><a href="https://owasp.org/API-Security/editions/2023/en/0xa1-broken-object-level-authorization/">API1:2023 Broken Object Level Authorization</a></li>
+<li><a href="https://medium.com/@bubu.tripathy/broken-object-level-authorization-bola-the-silent-threat-in-api-security-2fe5f57b21b2">Medium Post by Babu Tripathy</a></li>
+<li><a href="https://www.traceable.ai/owasp-api/broken-object-level-authorization">Blog by Dr. Katie Paxton-Fear</a></li>
+</ul>
+
+
+    
+
+<script src="https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 40,
+  backgroundColor: '#49344b',
+  textColor: '#fff'
+})</script>
+
+</body>
+</html>

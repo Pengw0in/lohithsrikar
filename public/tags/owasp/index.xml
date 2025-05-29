@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OWASP on JustaBlogSite!</title>
+    <link>http://localhost:1313/lohithsrikar/tags/owasp/</link>
+    <description>Recent content in OWASP on JustaBlogSite!</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 29 May 2025 20:23:58 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/lohithsrikar/tags/owasp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[OWASP] Broken Object Level Authorization</title>
+      <link>http://localhost:1313/lohithsrikar/posts/owasp-api/bola/</link>
+      <pubDate>Thu, 29 May 2025 20:23:58 +0530</pubDate>
+      <guid>http://localhost:1313/lohithsrikar/posts/owasp-api/bola/</guid>
+      <description>&lt;div class=&#34;series&#34;&gt;&#xA;  &lt;details&gt;&#xA;    &lt;summary&gt;OWASP API Security Top 10&lt;/summary&gt;&#xA;    &lt;ul&gt;&#xA;      &#xA;      &#xA;      &#xA;      &lt;li&gt;-&lt;a href=&#34;http://localhost:1313/lohithsrikar/posts/bolg/&#34;&gt;1. Broken Object Level Authorization&lt;/a&gt;&lt;/li&gt;&#xA;      &#xA;    &lt;/ul&gt;&#xA;  &lt;/details&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;h2 id=&#34;1-introduction&#34;&gt;1. Introduction&lt;/h2&gt;&#xA;&lt;p&gt;In the present world, Application Programming Interface (API) stands out to be one of the most critical aspects. APIs are responsible for our daily activities like checking weather on our smart phone, buying a product from an E-commerce store or accessing our data on cloud storage and many more. However such technology also comes with its own risks. One of which is Broken object level authorization(BOLA).&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

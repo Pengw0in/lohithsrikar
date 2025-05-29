@@ -14,7 +14,8 @@
 	--dgray-color: #464646;
 	--mgray-color: #828282;
 	--lgray-color: #f2f2f2;
-
+	--link-color: #6B46C1;
+	
 	--background-color: var(--white-color);
 	--text-color: var(--black-color);
 	--gray-color: var(--lgray-color);
@@ -32,6 +33,7 @@
 	--text-color: var(--black-color);
 	--gray-color: var(--lgray-color);
 	--code-color: var(--mgray-color);
+	--link-color: #6B46C1; /* Add for light theme */
   }
   
   body[data-theme="dark"] {
@@ -39,6 +41,7 @@
 	--text-color: var(--white-color);
 	--gray-color: var(--dgray-color);
 	--code-color: var(--mgray-color);
+	--link-color: #A78BFA; /* Different color for dark theme */
   }
   
   /* >>>>> ================ MAIN_CSS =============== <<<<< */
@@ -70,6 +73,7 @@
 	justify-content: center;
   }
   
+  /* Reset all links to default styling */
   a {
 	color: var(--text-color);
 	text-decoration: none;
@@ -78,6 +82,49 @@
   a:hover {
 	color: var(--primary-color);
   }
+  
+  /*
+	I KNOW THIS IS A WORST FIX, BUT IT WORKS!
+	Only highlight links within post content, but exclude TOC, navigation, and series 
+  */
+  .content a:not(.toc a):not(.series a):not(.main-header a),
+main a:not(.page-link):not(.post-title a):not(.toc a):not(.series a):not(.main-header a),
+p a,
+li a:not(.toc a):not(.series a):not(.main-header a),
+blockquote a,
+h1 a:not(.toc a):not(.series a):not(.main-header a), h2 a:not(.toc a):not(.series a):not(.main-header a), h3 a:not(.toc a):not(.series a):not(.main-header a), h4 a:not(.toc a):not(.series a):not(.main-header a), h5 a:not(.toc a):not(.series a):not(.main-header a), h6 a:not(.toc a):not(.series a):not(.main-header a) {
+  color: var(--link-color);
+  text-decoration: underline;
+}
+
+.content a:not(.toc a):not(.series a):not(.main-header a):hover,
+main a:not(.page-link):not(.post-title a):not(.toc a):not(.series a):not(.main-header a):hover,
+p a:hover,
+li a:not(.toc a):not(.series a):not(.main-header a):hover,
+blockquote a:hover,
+h1 a:not(.toc a):not(.series a):not(.main-header a):hover, h2 a:not(.toc a):not(.series a):not(.main-header a):hover, h3 a:not(.toc a):not(.series a):not(.main-header a):hover, h4 a:not(.toc a):not(.series a):not(.main-header a):hover, h5 a:not(.toc a):not(.series a):not(.main-header a):hover, h6 a:not(.toc a):not(.series a):not(.main-header a):hover {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+/* Keep navigation, post listing, TOC, and series links unstyled */
+.main-header a,
+.post-title a,
+.page-link,
+.toc a,
+.series a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.main-header a:hover,
+.post-title a:hover,
+.page-link:hover,
+.toc a:hover,
+.series a:hover {
+  color: var(--primary-color);
+  text-decoration: none;
+}
   
   /* >>>>> ================ POST_TITLE_CSS =============== <<<<< */
   div.post-title {
@@ -405,4 +452,3 @@
 	font-family: var(--title-font-family);
 	color: var(--text-color);
   }
-  

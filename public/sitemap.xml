@@ -2,21 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/lohithsrikar/posts/freeflags/</loc>
-    <lastmod>2025-05-28T20:23:58+05:30</lastmod>
+    <loc>http://localhost:1313/lohithsrikar/posts/owasp-api/bola/</loc>
+    <lastmod>2025-05-29T20:23:58+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/lohithsrikar/</loc>
-    <lastmod>2025-05-28T20:23:58+05:30</lastmod>
+    <lastmod>2025-05-29T20:23:58+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/lohithsrikar/tags/owasp/</loc>
+    <lastmod>2025-05-29T20:23:58+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/lohithsrikar/posts/</loc>
-    <lastmod>2025-05-28T20:23:58+05:30</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/lohithsrikar/posts/quartet/</loc>
-    <lastmod>2025-05-28T20:23:58+05:30</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/lohithsrikar/posts/screenshot/</loc>
-    <lastmod>2025-05-28T20:23:58+05:30</lastmod>
+    <lastmod>2025-05-29T20:23:58+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/lohithsrikar/tags/</loc>
+    <lastmod>2025-05-29T20:23:58+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/lohithsrikar/posts/nahamcon25/freeflags/</loc>
+    <lastmod>2025-05-23T20:23:58+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/lohithsrikar/posts/nahamcon25/quartet/</loc>
+    <lastmod>2025-05-23T20:23:58+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/lohithsrikar/posts/nahamcon25/screenshot/</loc>
+    <lastmod>2025-05-23T20:23:58+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/lohithsrikar/tags/writeups/</loc>
+    <lastmod>2025-05-23T20:23:58+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/lohithsrikar/about/</loc>
   </url>
 </urlset>
