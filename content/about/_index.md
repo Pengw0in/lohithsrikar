@@ -1,8 +1,8 @@
-# I'm **Lohith Srikar**.
+# **Lohith Srikar**.
 ### Low-quality polymath  
 
 Sophomore-year computer science student.  
-Not really sure what I'm doing — but I'm doing *something*.
+Not really sure what I'm doing, but I'm doing *something*.
 
 ## What I Actually Do  
 - Sometimes build websites 
@@ -24,3 +24,9 @@ Not really sure what I'm doing — but I'm doing *something*.
 > *Somewhere, a duck is watching.*
 
 If you're expecting consistency... well, good luck with that 🙂
+
+### Socials
+- [Youtube](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+- [Discord](https://discord.com/users/zenzo.oo)
+- [Mail](zendexino@gmail.com)
+

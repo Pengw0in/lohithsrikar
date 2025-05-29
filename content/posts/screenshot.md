@@ -6,26 +6,26 @@ title = 'ScreenShot!'
 
 # ScreenShot!
 
-helo people!
-Lets wrap this up quick!
+Hello everyone!
+Let's wrap this up quickly!
 
-This is a ctf from NahamCon2025 where we are given a image
+This is a CTF challenge from NahamCon 2025 where we are given an image.
 
-<img src="/images/screenshot/1.png" alt="1.png" width="600">
+<img src="/images/screenshot/1.png" alt="Challenge Screenshot" width="600">
 
-Well the image contains hex dump of some zip file.
+Well, the image contains a hex dump of some zip file.
 
-<img src="/images/screenshot/2.png" alt="1.png" width="600">
+<img src="/images/screenshot/2.png" alt="Hex Dump Screenshot" width="600">
 
-well how did I say its a zip file? well obviously its mention in the ctf description right?
+Well, how did I know it's a zip file? Well, obviously it's mentioned in the CTF description, right?
 
-thats true, but the other way is the match file signature , each file extension has its own file extension at starting of file, for example in this case we have **504b**, which is a file signature for zip files! More info about them here: [https://en.wikipedia.org/wiki/List_of_file_signatures](https://en.wikipedia.org/wiki/List_of_file_signatures)
+That's true, but another way is to match the file signature. Each file extension has its own file signature at the beginning of the file. For example, in this case we have `504b`, which is the file signature for zip files! More info about them here: [https://en.wikipedia.org/wiki/List_of_file_signatures](https://en.wikipedia.org/wiki/List_of_file_signatures)
 
-so what we will do is reverse this hex dump to convert back it into a zip file and open that zip hoping that we would find a flag file in it!
+So what we will do is reverse this hex dump to convert it back into a zip file and open that zip, hoping that we would find a flag file in it!
 
-first lets copy the contents of this image to a txt file , say hdump.txt
+First, let's copy the contents of this image to a text file, say `hdump.txt`:
 
-```HexDump
+```text
 00000000: 504b 0304 3300 0100 6300 2f02 b55a 0000  PK..3...c./..Z..
 00000010: 0000 4300 0000 2700 0000 0800 0b00 666c  ..C...'......fl
 00000020: 6167 2e74 7874 0199 0700 0200 4145 0300  ag.txt......AE..
@@ -43,16 +43,16 @@ first lets copy the contents of this image to a txt file , say hdump.txt
 000000e0: 0001 0001 0065 0000 0074 0000 0000 00    .....e...t.....
 ```
 
-to reverse the hexdump and convert it into a zip file , the following command can be used
+To reverse the hex dump and convert it into a zip file, the following command can be used:
 
-```Bash
-Xxd -r hdump.txt > hdump.zip 
+```bash
+xxd -r hdump.txt > hdump.zip 
 ```
 
-and then unzip the dump.zip
+And then unzip the `hdump.zip`:
 
-```Bash
+```bash
 unzip hdump.zip
 ```
 
-and thats it, we will get a flag file!
+And that's it! We will get a flag file!

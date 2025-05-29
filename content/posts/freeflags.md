@@ -6,39 +6,40 @@ title = 'Free Flags!'
 
 # Free Flags!
 
-Hola people!
+Hello everyone!
 
-<img src="/images/freeflags/1.png" alt="1.png" width="600">
+<img src="/images/freeflags/1.png" alt="Challenge Screenshot" width="600">
 
-This is our first challenge in Nahamcon2025 CTF. In this challenge, we are give a *free_flags.txt,* which apparently contains a lot of flags! So how do we find the correct flag out of em?
+This is our first challenge in NahamCon 2025 CTF. In this challenge, we are given a *free_flags.txt* file, which apparently contains a lot of flags! So how do we find the correct flag among them?
 
-Brute force maybe? maaaybee? 
+Brute force maybe? Perhaps?
 
-well its a possible, but not feasible!
+Well, it's possible, but not feasible!
 
-<img src="/images/freeflags/2.png" alt="1.png" width="600">
+<img src="/images/freeflags/2.png" alt="File Contents" width="600">
 
-so so how? only if we have a criteria to filter out correct flag ….. only if… wait! if you have read the rules properly I think you can find something like 
+So how do we solve this? If only we had criteria to filter out the correct flag... if only we had... wait! If you have read the rules properly, you'll find something like this:
 
-```Text
-Flags for this competition will follow the format: flag\{[0-9a-f]{32}\}. 
+```text
+Flags for this competition will follow the format: flag{[0-9a-f]{32}}. 
 That means a flag{} wrapper with a 32-character lowercase hex string 
-inside—basically something that looks like an MD5 hash. 
+inside—basically something that looks like an MD5 hash.
 ```
 
-yeah, these are criterias we need, and to be honest all we need is this regex pattern ***flag\{[0-9a-f]{32}\} .*** 
+Yeah, these are the criteria we need! To be honest, all we need is this regex pattern: **`flag{[0-9a-f]{32}}`**
 
-So lets write a small python script to scan and filter the flag we need , below is the python script we need for this challenge 
+Let's write a small Python script to scan and filter the flag we need. Below is the Python script for this challenge:
 
 ```python
 import re
 
 with open('free_flags.txt', 'r') as f:
-	flags = f.content()
-flag = re.findall(r'flag\{[0-9a-f]{32}\}' , flags)
+    flags = f.read()
+
+flag = re.findall(r'flag\{[0-9a-f]{32}\}', flags)
 print(flag)
 ```
 
-running this script will give us the flag we need!!\
+Running this script will give us the flag we need!
 
-Author : Zendex/Pengw0in
+**Author:** Zendex/Pengw0in

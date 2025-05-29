@@ -6,29 +6,29 @@ title = 'Quartet'
 
 # Quartet
 
-Hewo people!
+Hello everyone!
 
-So in this writeUp, lets see how we can solve this Quartet CTF from NahamCon2025.
+In this writeup, let's see how we can solve the Quartet CTF challenge from NahamCon 2025.
 
-<img src="/images/quartet/1.png" alt="1.png" width="600">
+<img src="/images/quartet/1.png" alt="Challenge Screenshot" width="600">
 
-so we are given Four files with strange extension ? Well they maybe strange for a person who saw them for first time, but they are not!
+We are given four files with strange extensions. Well, they may seem strange for someone who's seeing them for the first time, but they're not!
 
-These files with “zX”(where X is some number) extension are parts of a single zip file( .zip). so basically combining these zip files will give a one single complete zip file in theory.
+These files with "zX" (where X is a number) extensions are parts of a single zip file (.zip). Basically, combining these zip files will give us one single complete zip file in theory.
 
-Lets try to combine them with the following prompt 
+Let's try to combine them with the following command:
 
 ```bash
- cat * > main.zip # make sure that all these files are in an isolated folder!
+cat * > main.zip # Make sure all these files are in an isolated folder!
 ```
 
-now lets unzip this main.zip file!
+Now let's unzip this main.zip file:
 
 ```bash
 unzip main.zip
 ```
 
-and Alas!, we are greeted with a error , which is just a warning🤷‍♂️
+And alas! We are greeted with an error, which is just a warning 🤷‍♂️
 
 ```bash
 Archive:  main.zip
@@ -43,14 +43,14 @@ file #1:  bad zipfile offset (local header sig):  1526788
   inflating: quartet.jpeg
 ```
 
-mehh , just ignore them. We can see that  *inflating: quartet.jpeg i*n the last, that mean a jpeg file is extracted from main.zip. Lets look at it.
+Meh, just ignore them. We can see `inflating: quartet.jpeg` at the end, which means a JPEG file is extracted from main.zip. Let's look at it.
 
-<img src="/images/quartet/quartet.jpeg" alt="quartet.jpeg" width="600">
+<img src="/images/quartet/quartet.jpeg" alt="Quartet Image" width="600">
 
-Woah a quartet! no wonder the ctf name is also the same. well it is a image lets search for strings and filter them out with following command
+Woah, a quartet! No wonder the CTF name is the same. Well, it's an image. Let's search for strings and filter them out with the following command:
 
 ```bash
 strings quartet.jpeg | grep "flag"
 ```
 
-and there you go , the flag will appear!.
+And there you go—the flag will appear!
