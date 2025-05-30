@@ -1,0 +1,19 @@
+{{ define "main" }}
+<div class="error-container">
+  <div class="error-code">404</div>
+  <div class="error-message">
+    <h2>Page Not Found</h2>
+    <p>The page you're looking for doesn't exist or has been moved.</p>
+  </div>
+  
+  <div class="error-actions">
+    <a href="{{ site.BaseURL }}" class="error-button">/home</a>
+    <a href="{{ site.BaseURL }}posts/" class="error-button">/posts</a>
+    <a href="{{ site.BaseURL }}tags/" class="error-button">/tags</a>
+  </div>
+  
+  <div class="error-suggestion">
+    <p>How did you even end up here?</p>
+  </div>
+</div>
+{{ end }}

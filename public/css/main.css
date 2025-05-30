@@ -14,7 +14,7 @@
 	--dgray-color: #464646;
 	--mgray-color: #828282;
 	--lgray-color: #f2f2f2;
-	--link-color: #6B46C1;
+	--link-color: #a184a4;
 	
 	--background-color: var(--white-color);
 	--text-color: var(--black-color);
@@ -33,7 +33,7 @@
 	--text-color: var(--black-color);
 	--gray-color: var(--lgray-color);
 	--code-color: var(--mgray-color);
-	--link-color: #6B46C1; /* Add for light theme */
+	--link-color: #a184a4; /* Add for light theme */
   }
   
   body[data-theme="dark"] {
@@ -41,7 +41,7 @@
 	--text-color: var(--white-color);
 	--gray-color: var(--dgray-color);
 	--code-color: var(--mgray-color);
-	--link-color: #A78BFA; /* Different color for dark theme */
+	--link-color: #7c677e; /* Different color for dark theme */
   }
   
   /* >>>>> ================ MAIN_CSS =============== <<<<< */
@@ -452,3 +452,89 @@ h1 a:not(.toc a):not(.series a):not(.main-header a):hover, h2 a:not(.toc a):not(
 	font-family: var(--title-font-family);
 	color: var(--text-color);
   }
+  
+  /* >>>>> ================ ERROR_PAGE_CSS =============== <<<<< */
+.error-container {
+  text-align: center;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  font-family: var(--title-font-family);
+}
+
+.error-code {
+  font-size: 6rem;  /* Reduced from 8rem */
+  font-weight: 700;
+  color: var(--primary-color);
+  line-height: 1;
+  margin-bottom: 1rem;
+  letter-spacing: -4px;
+}
+
+.error-message h2 {
+  font-size: 1.6rem;  /* Reduced from 2rem */
+  margin-bottom: 1rem;
+  color: var(--text-color);
+  font-family: var(--header-font-family);
+}
+
+.error-message p {
+  font-size: 0.9rem;  /* Reduced from 1rem */
+  color: var(--mgray-color);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.error-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.error-button {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;  /* Slightly smaller padding */
+  background-color: var(--primary-color);
+  color: var(--white-color) !important;
+  text-decoration: none !important;
+  border-radius: 4px;
+  font-family: var(--title-font-family);
+  font-size: 0.8rem;  /* Reduced from 0.9rem */
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.error-button:hover {
+  background-color: var(--dgray-color);
+  color: var(--white-color) !important;
+}
+
+.error-suggestion {
+  margin-top: 2rem;
+}
+
+.error-suggestion p {
+  font-size: 0.8rem;  /* Reduced from 0.9rem */
+  color: var(--mgray-color);
+  font-style: italic;
+}
+
+@media (max-width: 600px) {
+  .error-code {
+    font-size: 4rem;  /* Reduced from 6rem */
+  }
+  
+  .error-message h2 {
+    font-size: 1.3rem;  /* Reduced from 1.5rem */
+  }
+  
+  .error-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .error-button {
+    width: 180px;  /* Slightly smaller */
+  }
+}
