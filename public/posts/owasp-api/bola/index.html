@@ -131,11 +131,11 @@
 <p>This vulnerability is recognized as Top security threat in <a href="https://owasp.org/API-Security/editions/2023/en/0x11-t10/">OWASP API Security Top 10</a> , which has ability to compromise many systems if ignored. In this blog let us see how it works and how it can be mitigated</p>
 <h3 id="1-1-authentication-vs-authorization">1-1. Authentication VS Authorization</h3>
 <img src="http://localhost:1313/lohithsrikar/images/bola/2.jpeg" alt="example" width="600">
-Before moving to actual workings of BOLA, let's first point out a common misconception. Many people think Authentication is same as Authorization, but in reality both cover different concepts.
+<p>Before moving to actual workings of BOLA, let&rsquo;s first point out a common misconception. Many people think Authentication is same as Authorization, but in reality both cover different concepts.</p>
 <p>Authorization maybe defined as &ldquo;the process of verifying that a requested action or service is approved for a specific entity&rdquo; <a href="https://csrc.nist.gov/glossary/term/authorization">(NIST)</a>. Where as Authentication is a process of verifying an entity&rsquo;s identity. A user who is authenticated (perhaps by username and password) is not often authorized to access every resource and perform every action possible on the system. For example, a web app will contain both normal users and admins. Usually the actions performed by admins are not privileged to normal users even though they are authenticated, and also authentication is not always required to access data, like unauthenticated users can have access to public data, a login page, or a whole web page</p>
 <h2 id="2-bola-workings">2. BOLA Workings</h2>
 <img src="http://localhost:1313/lohithsrikar/images/bola/1.png" alt="example" width="600">
-BOLA is a specific type of [insecure direct object reference (IDOR)](https://pengw0in.github.io/lohithsrikar/) , occurs when an API fails to check whether a user is authorized  to access specific object like - JSON file, image file, a document or a resource, based on identifiers like `user_id` , `account_id`, sequential integers, UUIDs, or generic strings.
+<p>BOLA is a specific type of <a href="https://pengw0in.github.io/lohithsrikar/">insecure direct object reference (IDOR)</a> , occurs when an API fails to check whether a user is authorized  to access specific object like : JSON file, image file, a document or a resource, based on identifiers like <code>user_id</code>, <code>account_id</code>, sequential integers, UUIDs, or generic strings.</p>
 <blockquote>
 <p><em>Just because a user is authenticated doesn&rsquo;t mean that the user authorized to access any object.</em></p></blockquote>
 <p>This vulnerability allows attackers to simply send API requests by altering object identifiers and gain access to sensitive data</p>
@@ -145,14 +145,14 @@ BOLA is a specific type of [insecure direct object reference (IDOR)](https://pen
 <p>Consider a University website which uses an API developed by university itself, which provides information about current students in that university. By inspecting browser requests , an attacker can identify a API end point like <code>example_uni/Photo_id/rollno</code> which returns student Photo based on identifier <code>rollno</code>. If attacker gains access to roll numbers of students, with a simple script, the attacker can access to photos of thousands of students.</p>
 </li>
 <li>
-<p>An automobile manufacturer has enabled remote control of its vehicles via a mobile API for communication with the driver&rsquo;s mobile phone. The API enables the driver to remotely start and stop the engine and lock and unlock the doors. As part of this flow, the user sends the Vehicle Identification Number (VIN) to the API. The API fails to validate that the VIN represents a vehicle that belongs to the logged in user, which leads to a BOLA vulnerability. An attacker can access vehicles that don&rsquo;t belong to him<a href="https://owasp.org/API-Security/editions/2023/en/0xa1-broken-object-level-authorization/#:~:text=An%20automobile%20manufacturer,belong%20to%20him.">source</a>.</p>
+<p>An automobile manufacturer has enabled remote control of its vehicles via a mobile API for communication with the driver&rsquo;s mobile phone. The API enables the driver to remotely start and stop the engine and lock and unlock the doors. As part of this flow, the user sends the Vehicle Identification Number (VIN) to the API. The API fails to validate that the VIN represents a vehicle that belongs to the logged in user, which leads to a BOLA vulnerability. An attacker can access vehicles that don&rsquo;t belong to him <a href="https://owasp.org/API-Security/editions/2023/en/0xa1-broken-object-level-authorization/#:~:text=An%20automobile%20manufacturer,belong%20to%20him.">source</a>.</p>
 </li>
 </ul>
 <h2 id="3-real-world-bola-breaches">3. Real-World BOLA Breaches</h2>
 <ul>
 <li><strong>Uber(2016):</strong> In October 2016, Uber experienced a data security incident that resulted in breach of information related to riders and driver accounts <a href="https://help.uber.com/en/riders/article/information-about-2016-data-security-incident?nodeId=12c1e9d1-4042-4231-a3ec-3605779b8815">source</a>.</li>
-<li><strong>Facebook (2018):</strong> A BOLA flaw allowed attackers to exploit access tokens, leading to the unauthorized access of millions of user accounts<a href="https://www.theguardian.com/news/2018/mar/17/cambridge-analytica-facebook-influence-us-election">source</a>.</li>
-<li><strong>Parler (2021):</strong> Researchers exploited BOLA vulnerabilities to download unprotected media files by incrementing object IDs, bypassing access controls without authentication<a href="https://www.wired.com/story/parler-hack-data-public-posts-images-video/">source</a></li>
+<li><strong>Facebook (2018):</strong> A BOLA flaw allowed attackers to exploit access tokens, leading to the unauthorized access of millions of user accoun <a href="https://www.theguardian.com/news/2018/mar/17/cambridge-analytica-facebook-influence-us-election">source</a>.</li>
+<li><strong>Parler (2021):</strong> Researchers exploited BOLA vulnerabilities to download unprotected media files by incrementing object IDs, bypassing access controls without authentication <a href="https://www.wired.com/story/parler-hack-data-public-posts-images-video/">source</a>.</li>
 </ul>
 <p>These cases highlight how simple oversights in authorization mechanisms can lead to massive data breaches.</p>
 <h2 id="4--how-to-prevent">4.  How to prevent</h2>
@@ -178,6 +178,5 @@ BOLA is a specific type of [insecure direct object reference (IDOR)](https://pen
   backgroundColor: '#49344b',
   textColor: '#fff'
 })</script>
-
 </body>
 </html>
