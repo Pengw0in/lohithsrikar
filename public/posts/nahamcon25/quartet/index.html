@@ -14,8 +14,8 @@
         });"></script>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>[Nahamcon25] Quartet | Pengw0in no site desu!</title>
-<link rel="icon" type="image/x-icon" href="http://localhost:1313/lohithsrikar/favicon.ico">
+<title>[Nahamcon25] Quartet | lohithsrikar</title>
+<link rel="icon" type="image/x-icon" href="http://localhost:1313/lohithsrikar/images/favicon.ico">
 
     <link rel="stylesheet" href="http://localhost:1313/lohithsrikar/css/main.css">
     <link rel="stylesheet" href="http://localhost:1313/lohithsrikar/css/min600.css">
@@ -90,7 +90,7 @@
   <div class="featured-container">
     
       <div class="featured-image">
-        <img src="http://localhost:1313/lohithsrikar/images/freeflags/featured.png" alt="Featured Image for [Nahamcon25] Quartet">
+        <img src="http://localhost:1313/lohithsrikar/images/nahamcon/freeflags/featured.png" alt="Featured Image for [Nahamcon25] Quartet">
       </div>
     
     <div class="overlay-text">
@@ -112,7 +112,7 @@
 <h1 id="quartet">Quartet</h1>
 <p>Hello everyone!</p>
 <p>In this writeup, let&rsquo;s see how we can solve the Quartet CTF challenge from NahamCon 2025.</p>
-<img src="http://localhost:1313/lohithsrikar/images/quartet/1.png" alt="Challenge Screenshot" width="600">
+<img src="http://localhost:1313/lohithsrikar/images/nahamcon/quartet/1.png" alt="Challenge Screenshot" width="600">
 <p>We are given four files with strange extensions. Well, they may seem strange for someone who&rsquo;s seeing them for the first time, but they&rsquo;re not!</p>
 <p>These files with &ldquo;zX&rdquo; (where X is a number) extensions are parts of a single zip file (.zip). Basically, combining these zip files will give us one single complete zip file in theory.</p>
 <p>Let&rsquo;s try to combine them with the following command:</p>
@@ -131,10 +131,12 @@
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">(</span>attempting to re-compensate<span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span>  inflating: quartet.jpeg
 </span></span></code></pre></div><p>Meh, just ignore them. We can see <code>inflating: quartet.jpeg</code> at the end, which means a JPEG file is extracted from main.zip. Let&rsquo;s look at it.</p>
-<img src="http://localhost:1313/lohithsrikar/images/quartet/quartet.jpeg" alt="Quartet Image" width="600">
+<img src="http://localhost:1313/lohithsrikar/images/nahamcon/quartet/quartet.jpeg" alt="Quartet Image" width="600">
 <p>Woah, a quartet! No wonder the CTF name is the same. Well, it&rsquo;s an image. Let&rsquo;s search for strings and filter them out with the following command:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>strings quartet.jpeg | grep <span style="color:#e6db74">&#34;flag&#34;</span>
 </span></span></code></pre></div><p>And there you go—the flag will appear!</p>
+<hr>
+<p><em>Last edit: 24-05-2025</em></p>
 
 
     

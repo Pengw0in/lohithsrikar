@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/lohithsrikar/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=lohithsrikar/livereload" data-no-instant defer></script>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '$', right: '$', display: false}
+            ]
+        });"></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>[Docs] Kowalski - Discord bot | lohithsrikar</title>
+<link rel="icon" type="image/x-icon" href="http://localhost:1313/lohithsrikar/images/favicon.ico">
+
+    <link rel="stylesheet" href="http://localhost:1313/lohithsrikar/css/main.css">
+    <link rel="stylesheet" href="http://localhost:1313/lohithsrikar/css/min600.css">
+
+
+      <script src="http://localhost:1313/lohithsrikar/js/main.js"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap" rel="stylesheet">
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4QR5T88G3K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('hugo', 'G-4QR5T88G3K');
+</script>
+
+
+</head>
+<body>
+    <header class="main-header">
+	<nav>
+	  <li><a href="http://localhost:1313/lohithsrikar/">/home</a></li>
+	  <li><a href="http://localhost:1313/lohithsrikar/about/">/about</a></li>
+	  <li><a href="http://localhost:1313/lohithsrikar/posts/">/posts</a></li>
+	  <li><a href="http://localhost:1313/lohithsrikar/tags/">/tags</a></li>
+	  <li id="theme-toggle" style="cursor: pointer;">/todark</li>
+	</nav>
+  </header>
+
+  <script>
+	document.addEventListener('DOMContentLoaded', function() {
+	  const themeToggle = document.getElementById('theme-toggle');
+	  
+	  
+	  let currentTheme = localStorage.getItem('theme') || 'light';
+  
+	  
+	  document.body.setAttribute('data-theme', currentTheme);
+	  themeToggle.textContent = currentTheme === 'dark' ? '/tolight' : '/todark';
+  
+	  
+	  function toggleTheme() {
+		
+		const newTheme = document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  
+		
+		document.body.setAttribute('data-theme', newTheme);
+  
+		
+		localStorage.setItem('theme', newTheme);
+  
+		
+		themeToggle.textContent = newTheme === 'dark' ? '/tolight' : '/todark';
+	  }
+  
+	  
+	  themeToggle.addEventListener('click', toggleTheme);
+	});
+  </script>
+
+    
+  <aside class="toc">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-general-info">1. General Info</a></li>
+    <li><a href="#2-command-overview">2. Command Overview</a></li>
+    <li><a href="#3-command-examples">3. Command Examples</a>
+      <ul>
+        <li><a href="#3-1-morse-code">3-1. Morse Code</a></li>
+        <li><a href="#3-2-caesar-cipher">3-2. Caesar Cipher</a></li>
+        <li><a href="#3-3-base64">3-3. Base64</a></li>
+        <li><a href="#3-4-hashing">3-4. Hashing</a></li>
+        <li><a href="#3-5-other">3-5. Other</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dev-notes">4. Dev Notes</a></li>
+    <li><a href="#5-support-and-issues">5. Support and Issues</a></li>
+    <li><a href="#6-contact">6. Contact</a></li>
+  </ul>
+</nav>
+  </aside>
+  <div class="featured-container">
+    
+      <div class="featured-image">
+        <img src="http://localhost:1313/lohithsrikar/images/kowalski/featured.png" alt="Featured Image for [Docs] Kowalski - Discord bot">
+      </div>
+    
+    <div class="overlay-text">
+      <small>2025.06.01</small>
+      <div class="singleTitle">[Docs] Kowalski - Discord bot</div>
+    </div>
+  </div>
+  <h1 id="kowalski-documentation">Kowalski Documentation</h1>
+<p>Kowalski is a simple bot written in python. This bot allows users to apply various encryptions , hashing methods and perform simple text analysis. This includes Caesar Cipher, Base64 encoding, Morse code, and more.</p>
+<p>Below is the simple documetation on how to use this bot along with examples</p>
+<h2 id="1-general-info">1. General Info</h2>
+<ul>
+<li>Prefix: <code>/</code></li>
+<li>Language: Python</li>
+<li>Name inspiration: <a href="https://static.wikia.nocookie.net/heroes-and-villain/images/8/8f/Profile_-_Kowalski.jpg/revision/latest?cb=20200125033446">Kowalski</a> from <a href="https://www.google.com/url?sa=t&amp;source=web&amp;rct=j&amp;opi=89978449&amp;url=https://madagascar.fandom.com/wiki/The_Penguins_of_Madagascar&amp;ved=2ahUKEwi1_uDg3tCNAxXfdPUHHXeCEScQFnoECBkQAQ&amp;usg=AOvVaw3cb0w5sTiYjx98uua_wwsv">Penguins of Madagascar</a></li>
+<li>Hotel: Trivago</li>
+</ul>
+<h2 id="2-command-overview">2. Command Overview</h2>
+<ul>
+<li>Morse Code Encryption: <code>/me &lt;message&gt;</code></li>
+<li>Morse Code Decryption: <code>/md &lt;morse_code&gt;</code></li>
+<li>Caesar Cipher Encryption: <code>/ce &lt;message&gt;</code></li>
+<li>Caesar Cipher Decryption: <code>/cd &lt;encrypted_message&gt;</code></li>
+<li>Binary Encryption: <code>/be &lt;message&gt;</code></li>
+<li>Binary Decryption: <code>/bd &lt;binary_code&gt;</code></li>
+<li>Base64 Encryption: <code>/he &lt;message&gt;</code></li>
+<li>Base64 Decryption: <code>/hd &lt;encoded_message&gt;</code></li>
+<li>Vigenère Cipher Encryption: <code>/ve &lt;key&gt; &lt;message&gt;</code></li>
+<li>Vigenère Cipher Decryption: <code>/vd &lt;key&gt; &lt;encrypted_message&gt;</code></li>
+<li>ROT13 Cipher: <code>/rot13 &lt;message&gt;</code></li>
+<li>Reverse Text: <code>/reverse &lt;message&gt;</code></li>
+<li>Hashing (MD5): <code>/hashmd5 &lt;message&gt;</code></li>
+<li>Hashing (SHA-256): <code>/hashsha256 &lt;message&gt;</code></li>
+<li>Random Substitution Cipher: <code>/rs &lt;message&gt;</code></li>
+<li>Salted Hashing: <code>/sh &lt;message&gt;</code></li>
+<li>AES Encryption : <code>/aese &lt;message&gt;</code></li>
+<li>AES Decryption: <code>/aesd &lt;message&gt;</code></li>
+<li>Text Analysis: <code>/analysis &lt;message&gt;</code></li>
+</ul>
+<h2 id="3-command-examples">3. Command Examples</h2>
+<h3 id="3-1-morse-code">3-1. Morse Code</h3>
+<ul>
+<li>Encrypt: <code>/me Hello</code> → <code>.... . .-.. .-.. ---</code></li>
+<li>Decrypt: <code>/md .... . .-.. .-.. ---</code> → <code>Hello</code></li>
+</ul>
+<h3 id="3-2-caesar-cipher">3-2. Caesar Cipher</h3>
+<ul>
+<li>Encrypt: <code>/ce Hello</code> → <code>Khoor</code></li>
+<li>Decrypt: <code>/cd Khoor</code> → <code>Hello</code></li>
+</ul>
+<h3 id="3-3-base64">3-3. Base64</h3>
+<ul>
+<li>Encode: <code>/he Hello</code> → <code>SGVsbG8=</code></li>
+<li>Decode: <code>/hd SGVsbG8=</code> → <code>Hello</code></li>
+</ul>
+<h3 id="3-4-hashing">3-4. Hashing</h3>
+<ul>
+<li>MD5: <code>/hashmd5 Hello</code> → <code>8b1a9953c4611296a827abf8c47804d7</code></li>
+<li>SHA-256: <code>/hashsha256 Hello</code> → <code>185f8db32271fe25f561a6fc938b2e264306ec304eda518007d1764826381969</code></li>
+</ul>
+<h3 id="3-5-other">3-5. Other</h3>
+<ul>
+<li>Reverse: <code>/reverse Hello</code> → <code>olleH</code></li>
+<li>ROT13: <code>/rot13 Hello</code> → <code>Uryyb</code></li>
+<li>Binary: <code>/be Hello</code> → <code>01001000 01100101 ...</code></li>
+<li>Analyze: <code>/analyze Hello Hello</code> → <code>Most frequent word: Hello (2)</code></li>
+</ul>
+<p><em>For more details, use your brain</em></p>
+<h2 id="4-dev-notes">4. Dev Notes</h2>
+<p>I made this bot in my first year of college (July 2024), when I was fairly new to the world of computing. I didn’t really follow best practices while making this bot, most of it was written with the help of Claude and ChatGPT. Still, I’m really proud of this bot, probably because it was my first project that I made from scratch!</p>
+<p>Anyways, this bot will not be receiving any updates</p>
+<h2 id="5-support-and-issues">5. Support and Issues</h2>
+<p>If you encounter any issues or have questions about the bot, feel free to contact <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&amp;themeRefresh=1">me</a> or leave feedback in the <a href="https://discord.gg/XppKBd6VAu">server</a>.</p>
+<h2 id="6-contact">6. Contact</h2>
+<ul>
+<li>Discord: @zenzo.oo</li>
+<li>Mail: <a href="mailto:lohithsrikar679@gmail.com">lohithsrikar679@gmail.com</a> (<em>i dont check emails.</em>)</li>
+</ul>
+<hr>
+<p><em>Last edit: 01-06-2025</em></p>
+
+
+    
+
+<script src="https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 40,
+  backgroundColor: '#49344b',
+  textColor: '#fff'
+})</script>
+</body>
+</html>

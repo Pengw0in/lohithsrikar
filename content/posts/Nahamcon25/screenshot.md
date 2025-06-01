@@ -3,7 +3,7 @@ date = '2025-05-23T20:23:58+05:30'
 draft = false
 title = '[Nahamcon25] ScreenShot!'
 series = 'nahamcon25'
-featured_image = "/images/freeflags/featured.png"
+featured_image = "/images/nahamcon/freeflags/featured.png"
 tags = ['writeups']
 +++
 
@@ -16,11 +16,11 @@ Let's wrap this up quickly!
 
 This is a CTF challenge from NahamCon 2025 where we are given an image.
 
-<img src="/images/screenshot/1.png" alt="Challenge Screenshot" width="600">
+<img src="/images/nahamcon/screenshot/1.png" alt="Challenge Screenshot" width="600">
 
 Well, the image contains a hex dump of some zip file.
 
-<img src="/images/screenshot/2.png" alt="Hex Dump Screenshot" width="600">
+<img src="/images/nahamcon/screenshot/2.png" alt="Hex Dump Screenshot" width="600">
 
 Well, how did I know it's a zip file? Well, obviously it's mentioned in the CTF description, right?
 
@@ -61,3 +61,6 @@ unzip hdump.zip
 ```
 
 And that's it! We will get a flag file!
+
+---
+*Last edit: 24-05-2025*

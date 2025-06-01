@@ -55,3 +55,6 @@ These cases highlight how simple oversights in authorization mechanisms can lead
 - [API1:2023 Broken Object Level Authorization](https://owasp.org/API-Security/editions/2023/en/0xa1-broken-object-level-authorization/)
 - [Medium Post by Babu Tripathy](https://medium.com/@bubu.tripathy/broken-object-level-authorization-bola-the-silent-threat-in-api-security-2fe5f57b21b2)
 - [Blog by Dr. Katie Paxton-Fear](https://www.traceable.ai/owasp-api/broken-object-level-authorization)
+
+---
+*Last edit: 30-05-2025*

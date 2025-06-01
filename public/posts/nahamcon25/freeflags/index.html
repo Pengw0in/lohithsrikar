@@ -14,8 +14,8 @@
         });"></script>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>[Nahamcon25] Free Flags! | Pengw0in no site desu!</title>
-<link rel="icon" type="image/x-icon" href="http://localhost:1313/lohithsrikar/favicon.ico">
+<title>[Nahamcon25] Free Flags! | lohithsrikar</title>
+<link rel="icon" type="image/x-icon" href="http://localhost:1313/lohithsrikar/images/favicon.ico">
 
     <link rel="stylesheet" href="http://localhost:1313/lohithsrikar/css/main.css">
     <link rel="stylesheet" href="http://localhost:1313/lohithsrikar/css/min600.css">
@@ -90,7 +90,7 @@
   <div class="featured-container">
     
       <div class="featured-image">
-        <img src="http://localhost:1313/lohithsrikar/images/freeflags/featured.png" alt="Featured Image for [Nahamcon25] Free Flags!">
+        <img src="http://localhost:1313/lohithsrikar/images/nahamcon/freeflags/featured.png" alt="Featured Image for [Nahamcon25] Free Flags!">
       </div>
     
     <div class="overlay-text">
@@ -117,11 +117,11 @@
 
 <h1 id="free-flags">Free Flags!</h1>
 <p>Hello everyone!</p>
-<img src="http://localhost:1313/lohithsrikar/images/freeflags/1.png" alt="Challenge Screenshot" width="600">
+<img src="http://localhost:1313/lohithsrikar/images/nahamcon/freeflags/1.png" alt="Challenge Screenshot" width="600">
 <p>This is our first challenge in NahamCon 2025 CTF. In this challenge, we are given a <em>free_flags.txt</em> file, which apparently contains a lot of flags! So how do we find the correct flag among them?</p>
 <p>Brute force maybe? Perhaps?</p>
 <p>Well, it&rsquo;s possible, but not feasible!</p>
-<img src="http://localhost:1313/lohithsrikar/images/freeflags/2.png" alt="File Contents" width="600">
+<img src="http://localhost:1313/lohithsrikar/images/nahamcon/freeflags/2.png" alt="File Contents" width="600">
 <p>So how do we solve this? If only we had criteria to filter out the correct flag&hellip; if only we had&hellip; wait! If you have read the rules properly, you&rsquo;ll find something like this:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Flags for this competition will follow the format: flag{[0-9a-f]{32}}. 
 </span></span><span style="display:flex;"><span>That means a flag{} wrapper with a 32-character lowercase hex string 
@@ -136,7 +136,8 @@
 </span></span><span style="display:flex;"><span>flag <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>findall(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;flag\{[0-9a-f]</span><span style="color:#e6db74">{32}</span><span style="color:#e6db74">\}&#39;</span>, flags)
 </span></span><span style="display:flex;"><span>print(flag)
 </span></span></code></pre></div><p>Running this script will give us the flag we need!</p>
-<p><strong>Author:</strong> Zendex/Pengw0in</p>
+<hr>
+<p><em>Last edit: 24-05-2025</em></p>
 
 
     

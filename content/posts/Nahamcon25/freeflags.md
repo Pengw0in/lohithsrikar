@@ -3,7 +3,7 @@ date = '2025-05-23T20:23:58+05:30'
 draft = false
 title = '[Nahamcon25] Free Flags!'
 series = 'Nahamcon25'
-featured_image = "/images/freeflags/featured.png"
+featured_image = "/images/nahamcon/freeflags/featured.png"
 tags = ['writeups']
 +++
 
@@ -13,7 +13,7 @@ tags = ['writeups']
 
 Hello everyone!
 
-<img src="/images/freeflags/1.png" alt="Challenge Screenshot" width="600">
+<img src="/images/nahamcon/freeflags/1.png" alt="Challenge Screenshot" width="600">
 
 This is our first challenge in NahamCon 2025 CTF. In this challenge, we are given a *free_flags.txt* file, which apparently contains a lot of flags! So how do we find the correct flag among them?
 
@@ -21,7 +21,7 @@ Brute force maybe? Perhaps?
 
 Well, it's possible, but not feasible!
 
-<img src="/images/freeflags/2.png" alt="File Contents" width="600">
+<img src="/images/nahamcon/freeflags/2.png" alt="File Contents" width="600">
 
 So how do we solve this? If only we had criteria to filter out the correct flag... if only we had... wait! If you have read the rules properly, you'll find something like this:
 
@@ -47,4 +47,5 @@ print(flag)
 
 Running this script will give us the flag we need!
 
-**Author:** Zendex/Pengw0in
+---
+*Last edit: 24-05-2025*

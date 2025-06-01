@@ -14,8 +14,8 @@
         });"></script>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>[Nahamcon25] ScreenShot! | Pengw0in no site desu!</title>
-<link rel="icon" type="image/x-icon" href="http://localhost:1313/lohithsrikar/favicon.ico">
+<title>[Nahamcon25] ScreenShot! | lohithsrikar</title>
+<link rel="icon" type="image/x-icon" href="http://localhost:1313/lohithsrikar/images/favicon.ico">
 
     <link rel="stylesheet" href="http://localhost:1313/lohithsrikar/css/main.css">
     <link rel="stylesheet" href="http://localhost:1313/lohithsrikar/css/min600.css">
@@ -90,7 +90,7 @@
   <div class="featured-container">
     
       <div class="featured-image">
-        <img src="http://localhost:1313/lohithsrikar/images/freeflags/featured.png" alt="Featured Image for [Nahamcon25] ScreenShot!">
+        <img src="http://localhost:1313/lohithsrikar/images/nahamcon/freeflags/featured.png" alt="Featured Image for [Nahamcon25] ScreenShot!">
       </div>
     
     <div class="overlay-text">
@@ -113,9 +113,9 @@
 <p>Hello everyone!
 Let&rsquo;s wrap this up quickly!</p>
 <p>This is a CTF challenge from NahamCon 2025 where we are given an image.</p>
-<img src="http://localhost:1313/lohithsrikar/images/screenshot/1.png" alt="Challenge Screenshot" width="600">
+<img src="http://localhost:1313/lohithsrikar/images/nahamcon/screenshot/1.png" alt="Challenge Screenshot" width="600">
 <p>Well, the image contains a hex dump of some zip file.</p>
-<img src="http://localhost:1313/lohithsrikar/images/screenshot/2.png" alt="Hex Dump Screenshot" width="600">
+<img src="http://localhost:1313/lohithsrikar/images/nahamcon/screenshot/2.png" alt="Hex Dump Screenshot" width="600">
 <p>Well, how did I know it&rsquo;s a zip file? Well, obviously it&rsquo;s mentioned in the CTF description, right?</p>
 <p>That&rsquo;s true, but another way is to match the file signature. Each file extension has its own file signature at the beginning of the file. For example, in this case we have <code>504b</code>, which is the file signature for zip files! More info about them here: <a href="https://en.wikipedia.org/wiki/List_of_file_signatures">https://en.wikipedia.org/wiki/List_of_file_signatures</a></p>
 <p>So what we will do is reverse this hex dump to convert it back into a zip file and open that zip, hoping that we would find a flag file in it!</p>
@@ -140,6 +140,8 @@ Let&rsquo;s wrap this up quickly!</p>
 </span></span></code></pre></div><p>And then unzip the <code>hdump.zip</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>unzip hdump.zip
 </span></span></code></pre></div><p>And that&rsquo;s it! We will get a flag file!</p>
+<hr>
+<p><em>Last edit: 24-05-2025</em></p>
 
 
     
