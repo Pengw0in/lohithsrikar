@@ -80,4 +80,4 @@ If you encounter any issues or have questions about the bot, feel free to contac
 - Mail: lohithsrikar679@gmail.com (*i dont check emails.*)
 
 ---
-*Last edit: 01-06-2025*
+*Last edit: 02-06-2025*
